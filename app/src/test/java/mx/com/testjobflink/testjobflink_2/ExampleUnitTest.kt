@@ -1,4 +1,4 @@
-package mx.dicio.validacion.testjobflink
+package mx.com.testjobflink.testjobflink_2
 
 import org.junit.Test
 

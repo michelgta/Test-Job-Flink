@@ -1,4 +1,4 @@
-package mx.dicio.validacion.testjobflink.ui.main
+package mx.com.testjobflink.ui.main
 
 import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
@@ -6,7 +6,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import mx.dicio.validacion.testjobflink.R
+import mx.com.testjobflink.R
 
 class MainFragment : Fragment() {
 

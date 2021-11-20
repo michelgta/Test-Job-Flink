@@ -1,4 +1,4 @@
-package mx.dicio.validacion.testjobflink.ui.main
+package mx.com.testjobflink.ui.main
 
 import androidx.lifecycle.ViewModel
 
