@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="movie"
+            type="mx.com.testjobflink.data.models.Movie" />
+    </data>
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:foreground="?android:attr/selectableItemBackground"
+            android:layout_width="@dimen/width_default_gallery"
+            android:layout_height="@dimen/height_default_gallery"
+            android:layout_gravity="center_horizontal">
+
+            <ImageView
+                android:id="@+id/ivMoviePoster"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:adjustViewBounds="true"
+                android:scaleType="centerCrop" />
+
+
+            <ImageView
+                android:id="@+id/ivMovieFavoriteState"
+                android:layout_width="@dimen/favorite_action_size"
+                android:layout_height="@dimen/favorite_action_size"
+                android:background="@color/colorTextTitle"
+                android:padding="@dimen/normal_separation"
+                android:src="@drawable/ic_favorite_empty"
+                app:layout_constraintBottom_toTopOf="@+id/linearLayout"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0" />
+
+            <LinearLayout
+                android:id="@+id/linearLayout"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:background="@color/colorFooter"
+                android:orientation="vertical"
+                android:padding="8dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent">
+
+                <TextView
+                    android:id="@+id/tvMovieTitle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/small_separation"
+                    android:layout_marginEnd="@dimen/small_separation"
+                    android:ellipsize="end"
+                    android:gravity="center_vertical"
+                    android:singleLine="true"
+                    android:text="@{movie.title}"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:textColor="@android:color/black"
+                    android:textSize="@dimen/text_list_size_normal" />
+
+                <TextView
+                    android:id="@+id/tvTotalPointsItem"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="@{movie.voteAverage +`(`+ movie.voteCount + `votes )`}"
+                    android:drawableStart="@drawable/ic_stars"
+                    android:drawablePadding="@dimen/normal_separation"
+                    android:gravity="center"
+                    android:textAppearance="?android:attr/textAppearanceListItem"
+                    android:textColor="@android:color/black"
+                    android:textSize="@dimen/text_list_size_small"
+                    tools:text="120 with 120 votes" />
+            </LinearLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+</layout>
+

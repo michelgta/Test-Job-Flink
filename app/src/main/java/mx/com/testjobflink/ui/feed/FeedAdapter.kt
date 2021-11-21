@@ -3,8 +3,8 @@ package mx.com.testjobflink.ui.feed
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.viewpager2.adapter.FragmentStateAdapter
-import mx.com.testjobflink.ui.FavoriteFragment
-import mx.com.testjobflink.ui.PopularFragment
+import mx.com.testjobflink.ui.favorite.FavoriteFragment
+import mx.com.testjobflink.ui.popular.PopularFragment
 import mx.com.testjobflink.utils.Constants
 
 class FeedTabsAdapter(activity: AppCompatActivity) : FragmentStateAdapter(activity) {

@@ -36,14 +36,12 @@ android {
 
     buildFeatures {
         dataBinding = true
-
-        // for view binding:
         viewBinding = true
     }
 }
 
 def navigationVersion = "2.3.5"
-def roomVersion = "2.3.0"
+def roomVersion = "2.2.6"
 def coroutinesVersion = "1.5.2"
 def koinVersion = "2.1.4"
 def koinAndroidVersion = "2.1.5"
