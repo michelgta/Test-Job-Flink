@@ -8,4 +8,4 @@ val String.posterFullUrl: String
     get() = "${URL_IMAGE}$this"
 
 val Boolean.imageFavoriteResource: Int
-    get() = if (this) R.drawable.ic_favorite_empty else R.drawable.ic_favorite_full
+    get() = if (this) R.drawable.ic_favorite_full else R.drawable.ic_favorite_empty

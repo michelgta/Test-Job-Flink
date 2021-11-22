@@ -3,7 +3,6 @@ package mx.com.testjobflink.ui.favorite.viewmodel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import mx.com.testjobflink.base.BaseViewModel
-
 import mx.com.testjobflink.data.models.Movie
 import mx.com.testjobflink.domain.usecase.GetFavoritesUseCase
 import mx.com.testjobflink.ui.favorite.model.FavoriteViewState

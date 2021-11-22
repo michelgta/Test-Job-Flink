@@ -8,6 +8,8 @@
     <string name="error_verify_network_connection">Ha ocurrido un error de conexión a internet, por favor revisa tu conexión.</string>
     <string name="message_success_add_favorites">Agregado a favoritos correctamente</string>
     <string name="message_success_remove_favorites">Borrado de favoritos correctamente</string>
+    <string name="text_empty_favorites">La lista de favoritos esta vacia</string>
+    <string name="text_placeholder_votes">%1$s (%2$s votes)</string>
 
 
 </resources>

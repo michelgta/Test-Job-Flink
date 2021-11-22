@@ -1,20 +1,29 @@
 package mx.com.testjobflink.ui.popular
 
+import android.app.ActivityOptions
 import android.content.Context
+import android.content.Intent
 import android.content.res.Configuration
-import androidx.navigation.fragment.NavHostFragment
+import android.util.Pair
+import android.view.View
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
 import kotlinx.android.synthetic.main.fragment_popular.*
 import mx.com.testjobflink.R
 import mx.com.testjobflink.base.BaseFragment
 import mx.com.testjobflink.data.models.Movie
 import mx.com.testjobflink.ui.adapter.reciclerview.SpacesItemDecoration
+import mx.com.testjobflink.ui.detail.DetailActivity
+import mx.com.testjobflink.ui.favorite.FavoriteFragment
 import mx.com.testjobflink.ui.favorite.model.FavoriteViewState
 import mx.com.testjobflink.ui.listener.FragmentCommunication
 import mx.com.testjobflink.ui.popular.model.PopularViewState
 import mx.com.testjobflink.ui.popular.viewmodel.PopularViewModel
+import mx.com.testjobflink.utils.Constants
+import mx.com.testjobflink.utils.Constants.MOVIE
 import mx.com.testjobflink.utils.extensions.*
 import mx.com.testjobflink.utils.recyclerview.InfiniteScrollProvider
+import org.koin.android.viewmodel.ext.android.viewModel
 
 
 class PopularFragment : BaseFragment() {
@@ -35,13 +44,13 @@ class PopularFragment : BaseFragment() {
         }
     }
 
+
     override fun onAttach(context: Context) {
         super.onAttach(context)
         communication = context as FragmentCommunication
     }
 
     override fun initView() {
-        setUpNavigation()
         initAdapterManager()
     }
 
@@ -53,14 +62,16 @@ class PopularFragment : BaseFragment() {
         }
     }
 
-    private fun addNewMovies(movies: List<Movie>){
+    private fun addNewMovies(movies: List<Movie>) {
         moviesAdapter.addNewMovies(movies)
     }
 
     private fun initAdapterManager() {
         rvPopularMovies?.apply {
-            layoutManager = moviesLayoutManager ?: GridLayoutManager(requireContext(),
-                getColumnsByOrientation(isLandScape))
+            layoutManager = moviesLayoutManager ?: GridLayoutManager(
+                requireContext(),
+                getColumnsByOrientation(isLandScape)
+            )
             adapter = moviesAdapter
             addItemDecoration(SpacesItemDecoration(SPACE_ITEM_DECORATION))
             addScrollListener()
@@ -79,19 +90,21 @@ class PopularFragment : BaseFragment() {
                 it.run {
                     val newValue = !isFavorite
                     isFavorite = newValue
-                    notifyDataSetChanged()
                     viewModel.updateFavorite(id, newValue)
+                    notifyDataSetChanged()
                 }
             }
         }
     }
 
     private fun addScrollListener() {
-        InfiniteScrollProvider().attach(rvPopularMovies, object : InfiniteScrollProvider.OnLoadMoreListener {
-            override fun onLoadMore() {
-                viewModel.fetchPopularMovies()
-            }
-        })
+        InfiniteScrollProvider().attach(
+            rvPopularMovies,
+            object : InfiniteScrollProvider.OnLoadMoreListener {
+                override fun onLoadMore() {
+                    viewModel.fetchPopularMovies()
+                }
+            })
     }
 
     private fun handlePopularViewState(viewState: PopularViewState) {
@@ -104,7 +117,7 @@ class PopularFragment : BaseFragment() {
                 if (requireActivity().hasNetworkConnection())
                     snack(R.string.message_error_fetching)
                 else
-                    showAlert(R.string.error_verify_network_connection){
+                    showAlert(R.string.error_verify_network_connection) {
                         viewModel.fetchPopularMovies()
                     }
             }
@@ -119,17 +132,10 @@ class PopularFragment : BaseFragment() {
     }
 
 
-    private fun setUpNavigation() {
-        (activity?.supportFragmentManager?.findFragmentById(R.id.navHostFragment) as? NavHostFragment)?.navController?.navigate(
-            R.id.popularFragment
-        )
+    override fun onResume() {
+        super.onResume()
+        viewModel.fetchPopularMovies()
     }
 
-    companion object {
-        @JvmStatic
-        fun newInstance() =
-            PopularFragment().apply {
 
-            }
-    }
 }

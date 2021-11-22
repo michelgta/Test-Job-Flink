@@ -6,7 +6,7 @@ object Constants {
     const val DELAY: Long = 3000
     const val URL_BASE = "https://api.themoviedb.org/3/movie/"
     const val URL_IMAGE = "https://image.tmdb.org/t/p/w200"
-    const val API_KEY = "04cc156d49baa2cd20405f60fd21c748"
+    const val API_KEY = "1865f43a0549ca50d341dd9ab8b29f49"
     const val DEFAULT_LANGUAGE = "es-MX"
     const val DEFAULT_REGION = "us"
     const val MAX_PAGES = 500

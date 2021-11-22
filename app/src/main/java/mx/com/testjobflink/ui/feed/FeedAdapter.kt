@@ -14,10 +14,15 @@ class FeedTabsAdapter(activity: AppCompatActivity) : FragmentStateAdapter(activi
 
     override fun createFragment(position: Int): Fragment {
         return when (position) {
-            Constants.TAB_1 -> PopularFragment.newInstance()
-            Constants.TAB_2 -> FavoriteFragment.newInstance()
-            else -> PopularFragment.newInstance()
+            Constants.TAB_1 -> PopularFragment()
+            Constants.TAB_2 -> FavoriteFragment()
+            else -> PopularFragment()
         }
+
+    }
+
+    override fun getItemId(position: Int): Long {
+        return super.getItemId(position)
     }
 
 

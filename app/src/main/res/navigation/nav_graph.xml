@@ -10,24 +10,39 @@
         android:name="mx.com.testjobflink.ui.popular.PopularFragment"
         android:label="fragment_popular"
         tools:layout="@layout/fragment_popular" >
-        <action
-            android:id="@+id/action_popularFragment_to_detailMovieFragment"
-            app:destination="@id/detailMovieFragment" />
+
+
     </fragment>
-    <fragment
-        android:id="@+id/detailMovieFragment"
-        android:name="mx.com.testjobflink.ui.favorite.FavoriteFragment"
-        android:label="fragment_detail_movie"
-        tools:layout="@layout/fragment_detail_movie" />
+
+
     <fragment
         android:id="@+id/favoriteFragment"
         android:name="mx.com.testjobflink.ui.favorite.FavoriteFragment"
         android:label="fragment_favorite"
         tools:layout="@layout/fragment_favorite" >
-        <action
-            android:id="@+id/action_favoriteFragment_to_detailMovieFragment"
-            app:destination="@id/detailMovieFragment" />
+
+
     </fragment>
+    <activity
+        android:id="@+id/splashActivity"
+        android:name="mx.com.testjobflink.ui.splash.SplashActivity"
+        android:label="activity_splash"
+        tools:layout="@layout/activity_splash" />
+    <activity
+        android:id="@+id/detailActivity"
+        android:name="mx.com.testjobflink.ui.detail.DetailActivity"
+        android:label="activity_detail"
+        tools:layout="@layout/activity_detail">
+
+        <argument
+            android:name="movie"
+            app:argType="mx.com.testjobflink.data.models.Movie" />
+
+
+    </activity>
+
+
+
 
 
 </navigation>

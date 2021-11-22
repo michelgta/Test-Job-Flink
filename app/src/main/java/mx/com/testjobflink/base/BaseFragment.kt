@@ -25,15 +25,19 @@ abstract class BaseFragment : Fragment() {
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         return inflater.inflate(getLayoutView(), container, false)
+
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
         moviesLayoutManager = GridLayoutManager(requireContext(),
-                getColumnsByOrientation(isLandScape))
+            getColumnsByOrientation(isLandScape))
         initView()
         attachObservers()
+
     }
+
+
 
     protected fun getColumnsByOrientation(isLandScape: Boolean) = if (isLandScape) RECYCLER_VIEW_SPAN_COUNT_LANDSCAPE
     else RECYCLER_VIEW_SPAN_COUNT_PORTRAIT

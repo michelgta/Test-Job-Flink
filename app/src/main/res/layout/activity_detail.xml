@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorBlur"
+    tools:context=".ui.detail.DetailActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/clyContainerDetail"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/backgroundPoster"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop" />
+
+
+
+            <TextView
+                android:id="@+id/tvTotalPointsItem"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:drawableStart="@drawable/ic_stars"
+                android:drawablePadding="@dimen/normal_separation"
+                android:gravity="center"
+                android:padding="@dimen/normal_separation"
+                android:textAppearance="?android:attr/textAppearanceListItem"
+                android:textColor="@color/colorTextTitle"
+                android:textSize="@dimen/text_list_size_big_20"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/backgroundPoster"
+                app:layout_constraintTop_toBottomOf="@+id/tvMovieTitle"
+                tools:text="120 with 120 votes" />
+
+            <TextView
+                android:id="@+id/tvMovieTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/big_separation_20"
+                android:layout_marginStart="@dimen/small_separation"
+                android:layout_marginEnd="@dimen/small_separation"
+                android:gravity="center"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textColor="@color/colorTextTitle"
+                android:textSize="@dimen/text_list_size_big"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/ivMoviePoster"
+                tools:text="Marvel" />
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/ivMoviePoster"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/height_poster_image"
+                android:layout_marginTop="20dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tvMovieOverview"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/normal_separation"
+                android:textColor="@color/colorTextTitle"
+                android:textSize="@dimen/text_list_size_normal_16"
+
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvTotalPointsItem"
+                tools:text="Overview" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </LinearLayout>
+
+
+</androidx.core.widget.NestedScrollView>

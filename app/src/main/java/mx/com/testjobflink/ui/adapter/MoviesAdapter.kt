@@ -62,11 +62,9 @@ class MoviesAdapter(private val movies: MutableList<Movie>) :
                     transitionName = movie.posterPath
                     setOnClickListener { listener?.invoke(binding.ivMoviePoster, binding.tvMovieTitle, binding.tvTotalPointsItem, movie) }
 
-
-
                     with(movie) {
                         Glide.with(context).asDrawable().load(posterPath.posterFullUrl)
-                            .placeholder(R.drawable.ic_favorite_full)
+                            .placeholder(R.drawable.ic_movie_placeholder)
                             .into(ivMoviePoster)
                     }
                 }
