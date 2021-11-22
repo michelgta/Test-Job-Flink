@@ -34,9 +34,7 @@ abstract class BaseFragment : Fragment() {
             getColumnsByOrientation(isLandScape))
         initView()
         attachObservers()
-
     }
-
 
 
     protected fun getColumnsByOrientation(isLandScape: Boolean) = if (isLandScape) RECYCLER_VIEW_SPAN_COUNT_LANDSCAPE

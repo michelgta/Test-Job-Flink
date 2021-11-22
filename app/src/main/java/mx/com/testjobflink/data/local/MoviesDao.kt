@@ -6,7 +6,6 @@ import androidx.room.OnConflictStrategy
 import androidx.room.Query
 import mx.com.testjobflink.data.models.MovieData
 
-
 @Dao
 interface MoviesDao {
 

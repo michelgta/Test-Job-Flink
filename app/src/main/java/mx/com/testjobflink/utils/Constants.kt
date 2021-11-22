@@ -11,7 +11,6 @@ object Constants {
     const val DEFAULT_REGION = "us"
     const val MAX_PAGES = 500
     const val DATA_BASE_NAME_MOVIES = "movies_database"
-    const val MOVIE = "movie"
     const val TITLE = "title"
     const val RANKING = "ranking"
 

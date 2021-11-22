@@ -14,7 +14,6 @@ import mx.com.testjobflink.utils.Constants
 
 class MainActivity : AppCompatActivity(), FragmentCommunication {
 
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.main_activity)
@@ -27,8 +26,6 @@ class MainActivity : AppCompatActivity(), FragmentCommunication {
                 tab.text = getString(R.string.text_popular_movies)
             else
                 tab.text = getString(R.string.text_favorites_movies)
-
-
         }.attach()
 
     }
@@ -43,7 +40,5 @@ class MainActivity : AppCompatActivity(), FragmentCommunication {
         val detailMovieDialog = DetailMovieDialog(this, movie)
         detailMovieDialog.show()
     }
-
-
 }
 
