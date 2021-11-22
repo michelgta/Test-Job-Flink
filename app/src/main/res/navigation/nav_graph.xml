@@ -28,18 +28,7 @@
         android:name="mx.com.testjobflink.ui.splash.SplashActivity"
         android:label="activity_splash"
         tools:layout="@layout/activity_splash" />
-    <activity
-        android:id="@+id/detailActivity"
-        android:name="mx.com.testjobflink.ui.detail.DetailActivity"
-        android:label="activity_detail"
-        tools:layout="@layout/activity_detail">
 
-        <argument
-            android:name="movie"
-            app:argType="mx.com.testjobflink.data.models.Movie" />
-
-
-    </activity>
 
 
 

@@ -1,26 +1,17 @@
 package mx.com.testjobflink.ui.popular
 
-import android.app.ActivityOptions
 import android.content.Context
-import android.content.Intent
 import android.content.res.Configuration
-import android.util.Pair
-import android.view.View
-import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
 import kotlinx.android.synthetic.main.fragment_popular.*
 import mx.com.testjobflink.R
 import mx.com.testjobflink.base.BaseFragment
 import mx.com.testjobflink.data.models.Movie
 import mx.com.testjobflink.ui.adapter.reciclerview.SpacesItemDecoration
-import mx.com.testjobflink.ui.detail.DetailActivity
-import mx.com.testjobflink.ui.favorite.FavoriteFragment
 import mx.com.testjobflink.ui.favorite.model.FavoriteViewState
 import mx.com.testjobflink.ui.listener.FragmentCommunication
 import mx.com.testjobflink.ui.popular.model.PopularViewState
 import mx.com.testjobflink.ui.popular.viewmodel.PopularViewModel
-import mx.com.testjobflink.utils.Constants
-import mx.com.testjobflink.utils.Constants.MOVIE
 import mx.com.testjobflink.utils.extensions.*
 import mx.com.testjobflink.utils.recyclerview.InfiniteScrollProvider
 import org.koin.android.viewmodel.ext.android.viewModel
@@ -137,10 +128,13 @@ class PopularFragment : BaseFragment() {
 
     override fun onResume() {
         super.onResume()
-        if (!isFirstLauch)
+        if (!isFirstLauch) {
+            clyContainerPopular.gone()
             activity?.startActivity(activity?.intent)
-        else
+        } else {
+            clyContainerPopular.visible()
             isFirstLauch = false
+        }
     }
 
 

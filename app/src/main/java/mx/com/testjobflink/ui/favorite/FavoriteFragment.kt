@@ -109,7 +109,4 @@ class FavoriteFragment : BaseFragment() {
 
     }
 
-
-
-
 }
