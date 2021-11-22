@@ -33,6 +33,8 @@ class PopularFragment : BaseFragment() {
 
     lateinit var communication: FragmentCommunication
 
+    var isFirstLauch: Boolean = false
+
     override fun getLayoutView(): Int = R.layout.fragment_popular
 
     override fun onConfigurationChanged(newConfig: Configuration) {
@@ -52,6 +54,7 @@ class PopularFragment : BaseFragment() {
 
     override fun initView() {
         initAdapterManager()
+        isFirstLauch = true
     }
 
     override fun attachObservers() {
@@ -134,7 +137,10 @@ class PopularFragment : BaseFragment() {
 
     override fun onResume() {
         super.onResume()
-        viewModel.fetchPopularMovies()
+        if (!isFirstLauch)
+            activity?.startActivity(activity?.intent)
+        else
+            isFirstLauch = false
     }
 
 

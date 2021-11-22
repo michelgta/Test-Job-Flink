@@ -55,9 +55,9 @@ class PopularViewModel(private val useCase: GetPopularUseCase) : BaseViewModel()
         _popularViewState.postValue(PopularViewState.OnLoading)
         main {
             runCatching {
-               useCase.getPopularDB(page = currentPage)
+                useCase.getPopularDB(page = currentPage)
             }.onSuccess {
-                if (it.isNotEmpty()){
+                if (it.isNotEmpty()) {
                     currentPage++
                     _popularMovies.postValue(it)
                     _popularViewState.postValue(PopularViewState.OnSuccessFetch(currentPage))

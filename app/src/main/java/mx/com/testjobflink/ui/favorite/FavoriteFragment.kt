@@ -105,7 +105,7 @@ class FavoriteFragment : BaseFragment() {
 
     override fun onResume() {
         super.onResume()
-        attachObservers()
+       viewModel.getFavoritesMovies()
 
     }
 
